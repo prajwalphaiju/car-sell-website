@@ -4,12 +4,12 @@ This project is a web-based platform developed as part of my college project. It
 
 **Key Features:**
 
-- 1. User registration for sellers to list their cars and for buyers to inquire about listings.
-- 2. Car listing form where sellers can upload vehicle details, including images, make, model, and price.
-- 3. A search page that allows buyers to filter results by different parameters such as make, model, and price.
-- 4. Frontend designed with HTML and CSS to provide a responsive and clean user interface.
-- 5. Backend functionalities handled through PHP to process user data, login, and manage car listings.
-- 6. JavaScript included to handle form validations and search filtering.
+- User registration for sellers to list their cars and for buyers to inquire about listings.
+- Car listing form where sellers can upload vehicle details, including images, make, model, and price.
+- A search page that allows buyers to filter results by different parameters such as make, model, and price.
+- Frontend designed with HTML and CSS to provide a responsive and clean user interface.
+- Backend functionalities handled through PHP to process user data, login, and manage car listings.
+- JavaScript included to handle form validations and search filtering.
 
 **Technologies Used:**
 
