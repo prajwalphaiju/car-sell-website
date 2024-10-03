@@ -1,0 +1,39 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS car_sell;
+
+-- Use the created database
+USE car_sell;
+
+-- Create the seller table
+CREATE TABLE IF NOT EXISTS seller (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Create the car table
+CREATE TABLE IF NOT EXISTS car (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    seller_id INT NOT NULL,
+    make VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    mileage INT NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    image_path VARCHAR(255) NULL,
+    FOREIGN KEY (seller_id) REFERENCES seller(id)
+);
+
+
+
+-- Insert default cars
+INSERT INTO car (seller_id, make, model, year, mileage, location, price, image_path)
+VALUES 
+((SELECT id FROM seller LIMIT 1), 'Toyota', 'Camry', 2021, 5000, 'Canberra', 25000.00, 'toyotaCamry.jpg'),
+((SELECT id FROM seller LIMIT 1), 'Honda', 'Civic', 2020, 10000, 'NSW', 20000.00, 'hondaCivic.jpg'),
+((SELECT id FROM seller LIMIT 1), 'BMW', 'M4', 2019, 15000, 'NSW', 20000.00, 'bmwM4.jpg');
